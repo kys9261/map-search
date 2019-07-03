@@ -2,7 +2,7 @@
 
 ### Download
 
-[Jar downloads](https://github.com/kys9261/map-search/raw/master/lib/map-search-0.0.1.jar)
+[Jar download](https://github.com/kys9261/map-search/raw/master/lib/map-search-0.0.1.jar)
 
 ### How to run
 
