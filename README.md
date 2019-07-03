@@ -1,19 +1,15 @@
 # map-serch repository
 
-### Download
-
-[Jar downloads](https://github.com/kys9261/map-search/raw/master/lib/map-search-0.0.1.jar)
-
 ### How to run
 
-```sh
-java -jar map-search-0.0.1.jar
-```
+1. download runnable jar file : [jar download](https://github.com/kys9261/map-search/raw/master/lib/map-search-0.0.1.jar)
+2. run script on terminal  ```java -jar map-search-0.0.1.jar```
+3. access [http://localhost:8080](http://localhost:8080)
 
-Sample Accounts
+**Sample Accounts**
 - testAccount1 / 1234
-- testAccount3 / 1234
 - testAccount2 / 1234
+- testAccount3 / 1234
 
 
 ### Api document (Postman)
@@ -28,4 +24,3 @@ Sample Accounts
 |Retrofit|2.6.0|HTTP client|[Link](https://github.com/square/retrofit)|
 |Jjwt|0.9.0|JSON Web Token|[Link](https://github.com/jwtk/jjwt)|
 |Guava|28.0-jre|Preconditions check|[Link](https://github.com/google/guava)|
-|Commons-lang3|3.8.1|String utility class|[Link](https://github.com/apache/commons-lang)|
