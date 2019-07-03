@@ -20,7 +20,7 @@ public class SearchKeyword {
     private int seq;
 
     @NonNull
-    private int userSeq;
+    private Integer userSeq;
 
     @NonNull
     private String keyword;
