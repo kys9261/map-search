@@ -1,9 +1,12 @@
 package com.kys9261.mapsearch.config;
 
+import com.kys9261.mapsearch.exception.EntryPointUnauthorizedHandler;
+import com.kys9261.mapsearch.exception.JwtAccessDeniedHandler;
 import com.kys9261.mapsearch.security.AuthProvider;
 import com.kys9261.mapsearch.security.JWT;
 import com.kys9261.mapsearch.security.JwtAuthenticationToken;
 import com.kys9261.mapsearch.security.JwtAuthenticationTokenFilter;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +25,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthProvider authProvider;
 
+    @Autowired
+    private JwtAccessDeniedHandler jwtAccessDeniedHandler;
+
+    @Autowired
+    private EntryPointUnauthorizedHandler entryPointUnauthorizedHandler;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -36,6 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .csrf().disable()
+                .exceptionHandling()
+                    .accessDeniedHandler(jwtAccessDeniedHandler)
+                    .authenticationEntryPoint(entryPointUnauthorizedHandler)
+            .and()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
